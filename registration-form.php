@@ -13,43 +13,24 @@
 
 <body>
 
+
+
     <div class="container">
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
-                <h3 class="text-center mt-3">Create Account</h3>
+                <h3 class="text-center mt-3">Registration Form</h3>
 
                 <form action="form-data.php" method="POST">
 
                     <div class="mb-3">
                         <label for="name" class="form-label">Full Name</label>
-                        <input type="text" name="name" class="form-control" id="name" placeholder="Enter Your Name...">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="designation" class="form-label">Designation</label>
-                        <select name="designation" class="form-control" id="designation">
-                            <option selected>---Select Your Designation---</option>
-                            <option value="Officer">Officer</option>
-                            <option value="Executive">Executive</option>
-                            <option value="Sr. Executive">Sr. Executive</option>
-                            <option value="Manager">Manager</option>
-                            <option value="Sr. Manager">Sr. Manager</option>
-                            <option value="Asst. Manager">Asst. Manager</option>
-                            <option value="Deputy Manager">Deputy Manager</option>
-                            <option value="Data Entry Operator">Data Entry Operator</option>
-                        </select>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="office-id" class="form-label">Office ID</label>
-                        <input type="text" name="office_id" class="form-control" id="office_id"
-                            placeholder="Enter Your Office ID No..." required>
+                        <input type="text" name="full_name" class="form-control" id="name" placeholder="Enter Your Name...">
                     </div>
 
                     <div class="mb-3">
                         <label for="phone" class="form-label">Phone Number</label>
-                        <input type="text" name="phone" class="form-control" id="phone"
+                        <input type="tel" name="phone" class="form-control" id="phone"
                             placeholder="Enter Your Phone Number...">
                     </div>
 
@@ -86,20 +67,7 @@
                         </select>
                     </div>
 
-
-                    <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" name="password" class="form-control" id="password"
-                            placeholder="Enter Your Password...">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="confirm_password" class="form-label">Confirm Password</label>
-                        <input type="password" name="password_confirmation" class="form-control" id="confirm_password"
-                            placeholder="Confirm Your Password...">
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Create Account</button>
+                    <button type="submit" class="btn btn-primary">Register</button>
 
                     <p class="text-center">Have an account? <a href="">Log In</a> </p>
 
