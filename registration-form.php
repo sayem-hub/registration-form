@@ -98,7 +98,7 @@
                                     $gender = $_POST['gender'];
                                 }
 
-                                $is_agree = ' ';
+                            $is_agree = ' ';
                                 if (isset($_POST['is_agree'])) {
                                     $is_agree = $_POST['is_agree'];
                                 }
@@ -135,11 +135,11 @@
 
     <div class="container">
           <div class="row">
-              <div class="col-md-2"></div>
+              <div class="col-md-3"></div>
                     <div class="col-sm-6">
                             <div class="wrap shadow form-div">
               
-                                <div class="card bg-info">
+                                <div class="card bg-info mt-3">
                                     <div class="card-body">
                                             <h3 class="text-center mt-3">Registration Form</h3>
 
@@ -226,7 +226,7 @@
                                                 </div>    
                                             </div>
 
-                                            <button type="submit" class="btn btn-primary"  name="submit">Register</button>
+                                            <button type="submit" class="btn btn-success"  name="submit">Register</button>
 
                                             <p class="text-center">Have an account? <a href="">Log In</a> </p>
 
