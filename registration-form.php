@@ -49,14 +49,19 @@
 
       if (isset($_POST['submit'])) {
           $full_name = $_POST['full_name'];
+          $username = $_POST['username'];
           $phone = $_POST['phone'];
           $email_address = $_POST['email_address'];
           $department = $_POST['department'];
           $section = $_POST['section'];
-          $company = $_POST['company'];
+          $dob = $_POST['dob'];
+          $gender = $_POST['gender'];
+          $is_agree = $_POST['is_agree'];
+
+        //   print_r($_POST);
 
 
-          if (empty($full_name) || empty($phone) || empty($email_address) || empty($department) || empty($section) || empty($company)) {
+          if (empty($full_name) || empty($username) || empty($phone) || empty($email_address) || empty($department) || empty($section) || empty($dob) || empty($gender) || empty($is_agree)) {
 
               $validation_msg = validate('All fields are required');
 
@@ -68,13 +73,11 @@
 
                 $validation_msg = validate('Email is not a edu mail', 'warning');
 
-
           } else {
               $validation_msg = validate('Everything okay', 'success');
 
           }
       }
-
 
       ?>
 
@@ -89,54 +92,85 @@
                             if (isset($validation_msg)) {
                                 echo $validation_msg;
                             }
-
                           ?>
 
                 <form action="" method="POST">
 
-                    <div class="mb-3">
+                    <div class="form-group mb-3">
                         <label for="name" class="form-label">Full Name</label>
                         <input type="text" name="full_name" class="form-control" id="name" placeholder="Enter Your Name...">
                     </div>
 
-                    <div class="mb-3">
+                    <div class="form-group mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" name="username" class="form-control" id="username" placeholder="Type your username">
+                    </div>
+               
+                    <div class="form-group mb-3">
+                        <label for="email_address" class="form-label">Email address</label>
+                        <input type="text" name="email_address" class="form-control" id="email_address" placeholder="Enter Your Email...">
+                    </div>
+
+                     <div class="form-group mb-3">
                         <label for="phone" class="form-label">Phone Number</label>
                         <input type="tel" name="phone" class="form-control" id="phone"
                             placeholder="Enter Your Phone Number...">
                     </div>
 
-                    <div class="mb-3">
-                        <label for="email_address" class="form-label">Email address</label>
-                        <input type="text" name="email_address" class="form-control" id="email_address" placeholder="Enter Your Email...">
-
-                    </div>
-
-                    <div class="mb-3">
+                    <div class="form-group mb-3">
                         <label for="department" class="form-label">Department</label>
-                        <select name="department" class="form-control" id="department">
-                            <option selected>---Select Your Department---</option>
+                        <select class="form-select" name="department"  id="department">
+                            <option selected>Choose...</option>
                             <option value="ICT">ICT</option>
                             <option value="HR & Admin">HR & Admin</option>
                             <option value="Compliance">Compliance</option>
                         </select>
                     </div>
 
-                    <div class="mb-3">
+                    <div class="form-group mb-3">
                         <label for="section" class="form-label">Section</label>
-                        <select name="section" class="form-control" id="section">
-                            <option selected>---Select Your Section---</option>
+                        <select class="form-select" name="section" id="section" >
+                            <option selected>Choose...</option>
                             <option value="IT">IT</option>
                             <option value="MIS">MIS</option>
-                            <option value="KPI">KPI</option>
+                            <option value="HR">HR</option>
+                            <option value="Admin">Admin</option>
                         </select>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="company" class="form-label">Company</label>
-                        <select name="company" class="form-control" id="company">
-                            <option selected>---Select Your Company---</option>
-                        </select>
+                     <div class="form-group mb-3">
+                        <label for="dob" class="form-label">Date of Birth</label>
+                        <input type="date" name="dob" class="form-control" id="dob"
+                            placeholder="Enter Your Phone Number...">
                     </div>
+
+                    <div class="form-group mb-3">
+                         <label class="form-label">Gender</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="Male">
+                                <label class="form-check-label" for="male">Male</label>
+                            </div>
+                        
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="Female">
+                                <label class="form-check-label" for="female">Female</label>
+                            </div>
+                        
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="inlineRadio3" value="Others">
+                                <label class="form-check-label" for="others">Others</label>
+                            </div>
+                    </div>
+       
+                        <div class="form-group mb-3">
+                             <span>Are you agree with our terms and conditions?</span>
+                            <div class="form-check form-check-inline">
+                                
+                                    <input class="form-check-input" type="checkbox"name="is_agree" id="inlineCheckbox1" value="yes">
+                                    <label class="form-check-label" for="inlineCheckbox1">Yes</label>
+                                   
+                            </div>    
+                        </div>
 
                     <button type="submit" class="btn btn-primary"  name="submit">Register</button>
 
